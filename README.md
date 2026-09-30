@@ -4,6 +4,8 @@ API Guard 是一个轻量级 API 凭据管理工具，用于安全保存、读�
 
 它会优先把凭据保存到操作系统自带的密钥库中，并在运行命令时把密钥注入为环境变量，避免把敏感信息写进代码、`.env`、日志或 Git 仓库。
 
+<!-- TODO: add screenshot: 终端演示保存密钥与注入运行的流程 -->
+
 ## Features
 
 - 安全保存 API Key / Token / Service Secret
@@ -37,6 +39,24 @@ Linux 用户如果缺少 `secret-tool`，可以安装：
 ```bash
 sudo apt install libsecret-tools
 ```
+
+## 技术栈
+
+- Python 3.10+，仅使用标准库（`argparse`、`ctypes`、`getpass`、`subprocess` 等），无第三方依赖
+- 凭据只存操作系统原生密钥库，不提供明文文件 fallback：
+  - Windows：Credential Manager（经 `ctypes` 调用 `advapi32`）
+  - macOS：Keychain（经 `/usr/bin/security`）
+  - Linux：Secret Service（经 `secret-tool`；缺失时直接报错退出）
+
+## 快速开始
+
+```bash
+cd api-guardian
+python scripts/api_guard.py store openai
+python scripts/api_guard.py run openai OPENAI_API_KEY -- python app.py
+```
+
+第一条命令以隐藏输入保存密钥，第二条把密钥注入为环境变量后运行你的程序。详细用法见下文。
 
 ## Usage
 
