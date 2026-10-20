@@ -190,7 +190,7 @@ class MacOSKeychainStore(SecretStore):
         return result.stdout.rstrip("\n")
 
     def delete(self, name: str) -> None:
-        self._run(
+        result = self._run(
             [
                 "/usr/bin/security",
                 "delete-generic-password",
@@ -200,6 +200,8 @@ class MacOSKeychainStore(SecretStore):
                 target_name(name),
             ]
         )
+        if result.returncode:
+            raise StoreError("Keychain did not confirm credential deletion (the item may be missing or access denied).")
 
 
 class LinuxSecretToolStore(SecretStore):
@@ -211,7 +213,7 @@ class LinuxSecretToolStore(SecretStore):
 
     def store(self, name: str, secret: str) -> None:
         result = subprocess.run(
-            ["secret-tool", "store", "service", SERVICE_PREFIX, "name", validate_name(name)],
+            ["secret-tool", "store", "--label", target_name(name), "service", SERVICE_PREFIX, "name", validate_name(name)],
             input=secret,
             text=True,
             capture_output=True,
@@ -232,12 +234,14 @@ class LinuxSecretToolStore(SecretStore):
         return result.stdout.rstrip("\n")
 
     def delete(self, name: str) -> None:
-        subprocess.run(
+        result = subprocess.run(
             ["secret-tool", "clear", "service", SERVICE_PREFIX, "name", validate_name(name)],
             text=True,
             capture_output=True,
             check=False,
         )
+        if result.returncode:
+            raise StoreError("Secret Service did not confirm credential deletion (the item may be missing or access denied).")
 
 
 def get_store() -> SecretStore:

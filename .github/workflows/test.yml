@@ -1,0 +1,30 @@
+name: Credential adapter regression tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - run: python api-guardian/scripts/api_guard.py --help
+      - run: python -m py_compile api-guardian/scripts/api_guard.py tests/test_api_guard.py
+  linux-keyring:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install official Ubuntu keyring packages
+        run: sudo apt-get update && sudo apt-get install -y libsecret-tools gnome-keyring dbus
+      - name: Verify an isolated synthetic keyring
+        env:
+          API_GUARD_ISOLATED_TEST: '1'
+        run: dbus-run-session -- bash tests/linux_keyring_smoke.sh
