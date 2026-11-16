@@ -7,8 +7,6 @@
 轻量级 API 凭据 CLI：保存到操作系统密钥库，默认脱敏读取，按需注入子进程环境。
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB)](api-guardian/scripts/api_guard.py)
-[![仅标准库](https://img.shields.io/badge/依赖-Python_标准库-2563eb)](#实现与-agent-接入)
-[![平台](https://img.shields.io/badge/平台-Windows_%7C_macOS_%7C_Linux-555555)](#快速开始)
 
 [快速开始](#快速开始) · [使用示例](#一次使用是什么样) · [命令速查](#命令速查) · [安全边界](#安全边界) · [Agent skill](api-guardian/SKILL.md)
 
@@ -17,10 +15,6 @@
 ![API Guard 凭据流向示意：隐藏输入进入操作系统密钥库，经 run 注入受信任子进程的环境变量](docs/credential-flow.svg)
 
 API Key 不该散落在源代码、笔记和 `.env` 文件里。API Guard 用一个逻辑名称保存凭据，再让需要它的命令临时读取。它减少手工复制与文件落盘，**不把子进程变成安全沙箱，也不保证密钥永不泄露**。
-
-| 保存 | 查看 | 使用 |
-| --- | --- | --- |
-| 隐藏输入，交给系统密钥库 | 默认只读脱敏结果 | 按需注入受信任的子进程 |
 
 > [!IMPORTANT]
 > **没有明文文件 fallback。** 先确认密钥库后端可用，再保存凭据；使用前请阅读[安全边界](#安全边界)。
