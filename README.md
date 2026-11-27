@@ -1,6 +1,6 @@
 <div align="center">
 
-# API Guard
+# API Guard — OS Keychain & Secret Service API Key Vault Skill
 
 **简体中文** · [English](README.en.md)
 
