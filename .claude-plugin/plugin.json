@@ -1,0 +1,8 @@
+{
+  "name": "api-guardian",
+  "version": "1.0.0",
+  "description": "Zero-dependency OS vault CLI and Agent Skill to store API keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service and inject them into subprocesses without .env leaks.",
+  "author": "yuzhang-zhong",
+  "license": "MIT",
+  "skills": ["../api-guardian/SKILL.md"]
+}

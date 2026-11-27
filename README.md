@@ -130,3 +130,7 @@ git ls-files --others --exclude-standard
 - [`openai.yaml`](api-guardian/agents/openai.yaml)：Agent 配置入口，说明为 “Securely store and use API credentials”。
 
 实现只使用 Python 标准库（`argparse`、`ctypes`、`getpass`、`subprocess` 等），不需要 pip 依赖。集成时保留整个 `api-guardian/` 目录，并遵守宿主 Agent 的凭据授权与安全规则。
+
+## English
+
+**API Guard** (`api-guardian`) is a zero-dependency Python CLI and Agent Skill (for Codex, Claude Code, GitHub Copilot, and Cursor) that stores API keys, bearer tokens, and service secrets inside your operating system's native vault (**macOS Keychain**, **Windows Credential Manager**, or **Linux Secret Service / `secret-tool`**) instead of plaintext `.env` files. It returns masked previews by default and injects credentials directly into trusted child-process environment variables (`api_guard.py run <name> <ENV_VAR> -- <cmd>`) with no plaintext fallback, preventing accidental secret exposure in git commits, shell history, or AI coding transcripts. See the [full English README](README.en.md).

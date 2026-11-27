@@ -1,6 +1,6 @@
 ---
 name: api-guardian
-description: Secure API credential handling for storing, retrieving, rotating, and using API keys, tokens, and service secrets without committing or exposing them. Use when Codex needs to save an API key securely, retrieve a stored API credential, inject a credential into a command or environment variable, audit secret-handling risk, rotate/delete API credentials, or prevent API keys from being leaked into files, logs, shell history, git commits, or final responses.
+description: "Secure OS-keychain API credential CLI and Agent Skill for storing, retrieving (masked), rotating, and injecting API keys, tokens, and secrets into subprocesses without plaintext .env files or secret leaks. Backed by macOS Keychain, Windows Credential Manager (DPAPI), and Linux Secret Service (libsecret / secret-tool). Use when an AI agent (Codex, Claude Code, GitHub Copilot, Cursor) needs to save an API key securely, run commands with injected environment variables, replace .env secret files, or prevent API keys from leaking into git commits, logs, shell history, or chat transcripts. 适用场景：系统钥匙串保存API密钥、替代明文.env、子进程环境变量安全注入、防止AI编程泄露Key。"
 ---
 
 # API Guardian
