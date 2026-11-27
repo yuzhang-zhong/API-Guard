@@ -135,6 +135,15 @@ git ls-files --others --exclude-standard
 <a id="实现与-agent-接入"></a>
 ## Implementation and agent integration
 
+## Frequently Asked Questions (FAQ)
+
+<details>
+<summary>How does API Guard compare to 1Password CLI, Doppler, SOPS, or plaintext .env files?</summary>
+
+Plaintext `.env` files sit directly in your project folder where coding agents (**Claude Code, Cursor, Windsurf, Codex, GitHub Copilot**) can accidentally read or leak (`exfiltration`) raw `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GITHUB_TOKEN`, `STRIPE_SECRET_KEY`, `Gemini`, or `DeepSeek` secrets. `api-guardian` is a free, zero-dependency MIT open-source local alternative to cloud vaults (**1Password CLI, Doppler, Vault, SOPS**): it stores secrets in **macOS Keychain, Windows Credential Manager (DPAPI), or Linux Secret Service (`libsecret`)** and injects them only into child subprocesses at runtime (`npx skills add https://github.com/yuzhang-zhong/API-Guard --skill api-guardian`).
+
+</details>
+
 - [`api_guard.py`](api-guardian/scripts/api_guard.py): storage backends, input validation, masking, and subprocess injection.
 - [`SKILL.md`](skills/api-guardian/SKILL.md): agent workflow and secret-handling rules.
 - [`openai.yaml`](api-guardian/agents/openai.yaml): agent configuration entry, described as “Securely store and use API credentials”.

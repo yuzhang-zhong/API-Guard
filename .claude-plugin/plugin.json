@@ -9,15 +9,24 @@
   "homepage": "https://github.com/yuzhang-zhong/API-Guard",
   "repository": "https://github.com/yuzhang-zhong/API-Guard",
   "keywords": [
+    "agent-skills",
     "agent-skill",
+    "claude-skill",
+    "copilot-skill",
+    "codex-skill",
+    "cursor-skill",
     "api-key",
-    "password-vault",
+    "secret-management",
     "keychain",
     "credential-manager",
     "secret-service",
+    "dpapi",
     "dotenv-alternative",
-    "secret-management",
-    "env-injection"
+    "env-injection",
+    "devsecops",
+    "security",
+    "python-cli",
+    "zero-dependency"
   ],
   "skills": [
     "./skills/api-guardian"
