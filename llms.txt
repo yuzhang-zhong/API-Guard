@@ -26,3 +26,7 @@ python api-guardian/scripts/api_guard.py run openai OPENAI_API_KEY -- python app
 - [Agent Skill Entry](api-guardian/SKILL.md)
 - [Python CLI](api-guardian/scripts/api_guard.py)
 - [README (简体中文)](README.md) · [README (English)](README.en.md)
+
+## Multi-Angle Search & Slang Mapping
+- **Pain-Point / Symptom**: Accidentally committing `.env` API keys to Git; preventing Claude Code, Codex, Cursor, or Copilot from reading raw `OPENAI_API_KEY` / `STRIPE_SECRET_KEY` values in `.env` files (`防止AI编程读取泄露.env密钥`).
+- **Alternative-To**: Free, zero-dependency, offline OS-vault alternative to 1Password CLI (`op run`), Doppler, HashiCorp Vault, `dotenvx`, or `python-dotenv` using macOS Keychain, Windows Credential Manager (DPAPI), and Linux `secret-tool` (`libsecret`).

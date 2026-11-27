@@ -137,7 +137,7 @@ git ls-files --others --exclude-standard
 ## 常见问题 · FAQ
 
 - **为什么不直接用 `.env` 文件，而要用 API Guard？** 明文 `.env` 很容易被 AI 编程助手（Claude Code、Codex、Cursor、Copilot）读取进上下文、写入日志或误提交到 Git；API Guard 把密钥留在系统自带密码库（Keychain / 凭据管理器 / Secret Service），平时只显示脱敏掩码，运行命令时才临时注入子进程环境变量。
-- **How does it compare to cloud secret managers like 1Password CLI or Doppler?** API Guard requires zero accounts, zero cloud subscriptions, and zero `pip` packages—just Python 3.10+ and the OS vault already built into Windows, macOS, or Linux (`libsecret-tools`).
+- **How does it compare to 1Password CLI (`op run`), Doppler, HashiCorp Vault, `dotenvx`, or `python-dotenv`?** API Guard requires zero accounts, zero cloud subscriptions, and zero `pip` packages—just Python 3.10+ and the OS vault already built into Windows, macOS, or Linux (`libsecret-tools`).
 - **What happens if no OS keyring is unlocked?** It fails closed with an explicit error and never silently writes a plaintext fallback file.
 
 ## English
