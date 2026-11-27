@@ -7,6 +7,7 @@ authors:
     given-names: "Yuzhang"
 repository-code: "https://github.com/yuzhang-zhong/API-Guard"
 url: "https://github.com/yuzhang-zhong/API-Guard"
+license: "MIT"
 abstract: "Zero-dependency Python 3.10+ CLI and Agent Skill (api-guardian) that stores OpenAI, Anthropic, GitHub, and Stripe API keys in the operating system's native password vault (macOS Keychain, Windows Credential Manager, Linux Secret Service) instead of plaintext .env files, providing masked reads and subprocess environment-variable injection."
 keywords:
   - "agent-skill"

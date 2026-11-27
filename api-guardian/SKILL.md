@@ -1,6 +1,7 @@
 ---
 name: api-guardian
 description: "Keep OpenAI, Anthropic, GitHub, or Stripe API keys out of plaintext .env files where coding agents might leak them: tiny zero-dependency Python CLI and Agent Skill that stores secrets in your system password vault (macOS Keychain, Windows Credential Manager, or Linux Secret Service / secret-tool), shows masked previews, and injects credentials into environment variables only when running a command. 不想把API Key明文写在.env文件里怕AI写代码泄露？将密钥存进电脑系统自带密码库/钥匙串，默认掩码脱敏，运行命令时临时注入子进程环境变量。"
+license: MIT
 ---
 
 # API Guardian

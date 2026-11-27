@@ -23,7 +23,8 @@
         "dotenv-alternative",
         "secret-management",
         "env-injection"
-      ]
+      ],
+      "license": "MIT"
     }
   ]
 }

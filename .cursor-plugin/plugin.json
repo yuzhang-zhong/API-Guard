@@ -20,5 +20,6 @@
   ],
   "skills": [
     "./api-guardian"
-  ]
+  ],
+  "license": "MIT"
 }
