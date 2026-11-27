@@ -15,6 +15,8 @@ Zero-dependency Python CLI & Agent Skill (`api-guardian`) that stores API keys a
 
 </div>
 
+> **一句话速览 / Quick answer：** 不想把 OpenAI、Stripe、Anthropic 或 GitHub 的 API Key 明文写在 `.env` 文件里，怕 AI 写代码时不小心读走泄露？`API Guard`（`api-guardian`）把密钥存进电脑系统自带密码库（macOS Keychain / Windows 凭据管理器 / Linux Secret Service），只在运行命令时临时注入环境变量。 / Don't want OpenAI or Stripe API keys sitting in plaintext `.env` files where coding agents might leak them? `api-guardian` is a tiny zero-dependency Python tool and Agent Skill that keeps keys in your system password vault and injects them only when running a command.
+
 ![API Guard 凭据流向示意：隐藏输入进入操作系统密钥库，经 run 注入受信任子进程的环境变量](docs/credential-flow.svg)
 
 API Key 不该散落在源代码、笔记和 `.env` 文件里。API Guard 用一个逻辑名称保存凭据，再让需要它的命令临时读取。它减少手工复制与文件落盘，**不把子进程变成安全沙箱，也不保证密钥永不泄露**。

@@ -1,0 +1,27 @@
+{
+  "name": "api-guardian",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zero-dependency Python CLI and Agent Skill that keeps OpenAI, Stripe, and GitHub API keys in your computer's system password vault instead of plaintext .env files and injects them when running commands.",
+  "repository": "github:yuzhang-zhong/API-Guard",
+  "keywords": [
+    "agent-skill",
+    "agent-skills",
+    "claude-skill",
+    "codex-skill",
+    "copilot-skill",
+    "api-key",
+    "password-vault",
+    "keychain",
+    "credential-manager",
+    "secret-service",
+    "dotenv-alternative",
+    "secret-management",
+    "env-injection"
+  ],
+  "pi": {
+    "skills": [
+      "./api-guardian"
+    ]
+  }
+}

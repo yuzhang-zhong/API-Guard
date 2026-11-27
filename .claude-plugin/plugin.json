@@ -1,8 +1,25 @@
 {
   "name": "api-guardian",
   "version": "1.0.0",
-  "description": "Zero-dependency OS vault CLI and Agent Skill to store API keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service and inject them into subprocesses without .env leaks.",
-  "author": "yuzhang-zhong",
-  "license": "MIT",
-  "skills": ["../api-guardian/SKILL.md"]
+  "description": "Zero-dependency Python CLI and Agent Skill to keep OpenAI, Stripe, Anthropic, and GitHub API keys in your system password vault (macOS Keychain, Windows Credential Manager, Linux Secret Service) instead of plaintext .env files.",
+  "author": {
+    "name": "yuzhang-zhong",
+    "url": "https://github.com/yuzhang-zhong"
+  },
+  "homepage": "https://github.com/yuzhang-zhong/API-Guard",
+  "repository": "https://github.com/yuzhang-zhong/API-Guard",
+  "keywords": [
+    "agent-skill",
+    "api-key",
+    "password-vault",
+    "keychain",
+    "credential-manager",
+    "secret-service",
+    "dotenv-alternative",
+    "secret-management",
+    "env-injection"
+  ],
+  "skills": [
+    "./api-guardian"
+  ]
 }

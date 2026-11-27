@@ -1,6 +1,6 @@
 ---
 name: api-guardian
-description: "Secure OS-keychain API credential CLI and Agent Skill for storing, retrieving (masked), rotating, and injecting API keys, tokens, and secrets into subprocesses without plaintext .env files or secret leaks. Backed by macOS Keychain, Windows Credential Manager (DPAPI), and Linux Secret Service (libsecret / secret-tool). Use when an AI agent (Codex, Claude Code, GitHub Copilot, Cursor) needs to save an API key securely, run commands with injected environment variables, replace .env secret files, or prevent API keys from leaking into git commits, logs, shell history, or chat transcripts. 适用场景：系统钥匙串保存API密钥、替代明文.env、子进程环境变量安全注入、防止AI编程泄露Key。"
+description: "Keep OpenAI, Anthropic, GitHub, or Stripe API keys out of plaintext .env files where coding agents might leak them: tiny zero-dependency Python CLI and Agent Skill that stores secrets in your system password vault (macOS Keychain, Windows Credential Manager, or Linux Secret Service / secret-tool), shows masked previews, and injects credentials into environment variables only when running a command. 不想把API Key明文写在.env文件里怕AI写代码泄露？将密钥存进电脑系统自带密码库/钥匙串，默认掩码脱敏，运行命令时临时注入子进程环境变量。"
 ---
 
 # API Guardian

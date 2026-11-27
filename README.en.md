@@ -14,6 +14,8 @@ A lightweight credential CLI with masked reads and environment-variable injectio
 
 </div>
 
+> **Quick answer:** Don't want OpenAI, Stripe, Anthropic, or GitHub API keys sitting in plaintext `.env` files where coding agents might leak them? `API Guard` (`api-guardian`) is a tiny zero-dependency Python CLI and Agent Skill that keeps keys in your computer's system password vault (macOS Keychain, Windows Credential Manager, or Linux Secret Service) and injects them into environment variables only when running a command.
+
 ![Credential flow: hidden input goes to the OS vault, then run injects the credential into a trusted subprocess environment](docs/credential-flow.svg)
 
 API Guard stores a credential under a logical name and retrieves it when a command needs it. This reduces manual copying and writing keys into source code, notes, or `.env` files. **It does not sandbox subprocesses or guarantee that a key cannot leak.**

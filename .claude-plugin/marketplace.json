@@ -1,10 +1,29 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "api-guardian",
+  "owner": {
+    "name": "yuzhang-zhong",
+    "url": "https://github.com/yuzhang-zhong"
+  },
+  "description": "Install api-guardian as a Claude plugin.",
   "plugins": [
     {
       "name": "api-guardian",
-      "description": "Zero-dependency OS vault CLI and Agent Skill to store API keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service and inject them into subprocesses without .env leaks.",
-      "version": "1.0.0",
-      "path": "../api-guardian"
+      "source": "./",
+      "description": "Zero-dependency Python CLI and Agent Skill to keep OpenAI, Stripe, Anthropic, and GitHub API keys in your system password vault (macOS Keychain, Windows Credential Manager, Linux Secret Service) instead of plaintext .env files.",
+      "homepage": "https://github.com/yuzhang-zhong/API-Guard",
+      "repository": "https://github.com/yuzhang-zhong/API-Guard",
+      "keywords": [
+        "agent-skill",
+        "api-key",
+        "password-vault",
+        "keychain",
+        "credential-manager",
+        "secret-service",
+        "dotenv-alternative",
+        "secret-management",
+        "env-injection"
+      ]
     }
   ]
 }
