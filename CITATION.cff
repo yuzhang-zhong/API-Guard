@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use or reference this project, please cite it using the metadata below."
+type: software
+title: "API Guard (api-guardian): OS Password Vault Credential CLI and Subprocess Injection Agent Skill"
+authors:
+  - family-names: "Zhong"
+    given-names: "Yuzhang"
+repository-code: "https://github.com/yuzhang-zhong/API-Guard"
+url: "https://github.com/yuzhang-zhong/API-Guard"
+abstract: "Zero-dependency Python 3.10+ CLI and Agent Skill (api-guardian) that stores OpenAI, Anthropic, GitHub, and Stripe API keys in the operating system's native password vault (macOS Keychain, Windows Credential Manager, Linux Secret Service) instead of plaintext .env files, providing masked reads and subprocess environment-variable injection."
+keywords:
+  - "agent-skill"
+  - "api-key"
+  - "secret-management"
+  - "dotenv-alternative"
+  - "keychain"
+  - "macos-keychain"
+  - "credential-manager"
+  - "secret-service"
+  - "libsecret"
+  - "env-injection"
+  - "devsecops"

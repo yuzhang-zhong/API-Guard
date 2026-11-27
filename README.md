@@ -134,6 +134,12 @@ git ls-files --others --exclude-standard
 
 实现只使用 Python 标准库（`argparse`、`ctypes`、`getpass`、`subprocess` 等），不需要 pip 依赖。集成时保留整个 `api-guardian/` 目录，并遵守宿主 Agent 的凭据授权与安全规则。
 
+## 常见问题 · FAQ
+
+- **为什么不直接用 `.env` 文件，而要用 API Guard？** 明文 `.env` 很容易被 AI 编程助手（Claude Code、Codex、Cursor、Copilot）读取进上下文、写入日志或误提交到 Git；API Guard 把密钥留在系统自带密码库（Keychain / 凭据管理器 / Secret Service），平时只显示脱敏掩码，运行命令时才临时注入子进程环境变量。
+- **How does it compare to cloud secret managers like 1Password CLI or Doppler?** API Guard requires zero accounts, zero cloud subscriptions, and zero `pip` packages—just Python 3.10+ and the OS vault already built into Windows, macOS, or Linux (`libsecret-tools`).
+- **What happens if no OS keyring is unlocked?** It fails closed with an explicit error and never silently writes a plaintext fallback file.
+
 ## English
 
 **API Guard** (`api-guardian`) is a zero-dependency Python CLI and Agent Skill (for Codex, Claude Code, GitHub Copilot, and Cursor) that stores API keys, bearer tokens, and service secrets inside your operating system's native vault (**macOS Keychain**, **Windows Credential Manager**, or **Linux Secret Service / `secret-tool`**) instead of plaintext `.env` files. It returns masked previews by default and injects credentials directly into trusted child-process environment variables (`api_guard.py run <name> <ENV_VAR> -- <cmd>`) with no plaintext fallback, preventing accidental secret exposure in git commits, shell history, or AI coding transcripts. See the [full English README](README.en.md).
