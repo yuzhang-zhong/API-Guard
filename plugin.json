@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "api-guardian",
+  "description": "Zero-dependency Python CLI and Agent Skill storing API keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service with subprocess environment injection.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Yuzhang Zhong",
+    "url": "https://github.com/yuzhang-zhong"
+  },
+  "homepage": "https://github.com/yuzhang-zhong/API-Guard",
+  "repository": "https://github.com/yuzhang-zhong/API-Guard",
+  "license": "MIT",
+  "keywords": [
+    "api-key",
+    "password-vault",
+    "keychain",
+    "credential-manager",
+    "secret-service",
+    "dotenv-alternative",
+    "secret-management",
+    "env-injection"
+  ]
+}

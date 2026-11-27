@@ -10,7 +10,7 @@ A lightweight credential CLI with masked reads and environment-variable injectio
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB)](api-guardian/scripts/api_guard.py)
 
-[Quick start](#快速开始) · [Example](#一次使用是什么样) · [Commands](#命令速查) · [Security boundaries](#安全边界) · [Agent skill](api-guardian/SKILL.md)
+[Quick start](#快速开始) · [Example](#一次使用是什么样) · [Commands](#命令速查) · [Security boundaries](#安全边界) · [Agent skill](skills/api-guardian/SKILL.md)
 
 </div>
 
@@ -136,7 +136,7 @@ git ls-files --others --exclude-standard
 ## Implementation and agent integration
 
 - [`api_guard.py`](api-guardian/scripts/api_guard.py): storage backends, input validation, masking, and subprocess injection.
-- [`SKILL.md`](api-guardian/SKILL.md): agent workflow and secret-handling rules.
+- [`SKILL.md`](skills/api-guardian/SKILL.md): agent workflow and secret-handling rules.
 - [`openai.yaml`](api-guardian/agents/openai.yaml): agent configuration entry, described as “Securely store and use API credentials”.
 
 The implementation uses only the Python standard library, including `argparse`, `ctypes`, `getpass`, and `subprocess`; there are no pip dependencies. Keep the complete `api-guardian/` directory when integrating it, and follow the host agent's credential-authorization and security rules.

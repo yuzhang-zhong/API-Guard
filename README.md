@@ -11,7 +11,7 @@ Zero-dependency Python CLI & Agent Skill (`api-guardian`) that stores API keys a
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB)](api-guardian/scripts/api_guard.py)
 
-[快速开始](#快速开始) · [使用示例](#一次使用是什么样) · [命令速查](#命令速查) · [安全边界](#安全边界) · [Agent skill](api-guardian/SKILL.md)
+[快速开始](#快速开始) · [使用示例](#一次使用是什么样) · [命令速查](#命令速查) · [安全边界](#安全边界) · [Agent skill](skills/api-guardian/SKILL.md)
 
 </div>
 
@@ -129,7 +129,7 @@ git ls-files --others --exclude-standard
 ## 实现与 Agent 接入
 
 - [`api_guard.py`](api-guardian/scripts/api_guard.py)：存储后端、输入校验、掩码和子进程注入。
-- [`SKILL.md`](api-guardian/SKILL.md)：Agent 使用流程与秘密处理规则。
+- [`SKILL.md`](skills/api-guardian/SKILL.md)：Agent 使用流程与秘密处理规则。
 - [`openai.yaml`](api-guardian/agents/openai.yaml)：Agent 配置入口，说明为 “Securely store and use API credentials”。
 
 实现只使用 Python 标准库（`argparse`、`ctypes`、`getpass`、`subprocess` 等），不需要 pip 依赖。集成时保留整个 `api-guardian/` 目录，并遵守宿主 Agent 的凭据授权与安全规则。

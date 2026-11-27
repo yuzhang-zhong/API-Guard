@@ -21,7 +21,7 @@
   ],
   "pi": {
     "skills": [
-      "./api-guardian"
+      "./skills/api-guardian"
     ]
   },
   "license": "MIT"

@@ -1,6 +1,6 @@
 # API Guard / api-guardian (yuzhang-zhong/API-Guard)
 
-> Zero-dependency Python 3.10+ CLI (`api-guardian/scripts/api_guard.py`) and installable Agent Skill (`api-guardian/SKILL.md`) that keeps OpenAI, Anthropic, GitHub, and Stripe API keys inside your OS native password vault (macOS Keychain, Windows Credential Manager DPAPI, Linux Secret Service / `secret-tool`) instead of plaintext `.env` files, injecting secrets into child-process environment variables only at runtime.
+> Zero-dependency Python 3.10+ CLI (`api-guardian/scripts/api_guard.py`) and installable Agent Skill (`skills/api-guardian/SKILL.md`) that keeps OpenAI, Anthropic, GitHub, and Stripe API keys inside your OS native password vault (macOS Keychain, Windows Credential Manager DPAPI, Linux Secret Service / `secret-tool`) instead of plaintext `.env` files, injecting secrets into child-process environment variables only at runtime.
 > 替代明文 `.env` 文件的零依赖系统钥匙串/密码库 API Key 安全存储与子进程环境变量按需注入工具及 Agent Skill（防止 AI 编程助手读走或提交泄露密钥）。
 
 ## Key Facts & Verifiable Scope
@@ -23,7 +23,7 @@ python api-guardian/scripts/api_guard.py run openai OPENAI_API_KEY -- python app
 - Local single-machine OS credential helper, not a team RBAC secret server or a subprocess sandbox against untrusted malicious code.
 
 ## Key Files
-- [Agent Skill Entry](api-guardian/SKILL.md)
+- [Agent Skill Entry](skills/api-guardian/SKILL.md)
 - [Python CLI](api-guardian/scripts/api_guard.py)
 - [README (简体中文)](README.md) · [README (English)](README.en.md)
 
