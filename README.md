@@ -6,7 +6,8 @@
 
 **把密钥留在系统钥匙串，把能力交给你的程序。**
 
-轻量级 API 凭据 CLI：保存到操作系统密钥库，默认脱敏读取，按需注入子进程环境。
+把 API 密钥与凭据保存在操作系统钥匙串（macOS Keychain / Windows 凭据管理器 Credential Manager / Linux Secret Service）以替代明文 `.env` 文件，默认脱敏读取、按需注入子进程环境变量以防止 AI 编程泄露 Key 的零依赖 Python CLI 与 Agent Skill。<br>
+Zero-dependency Python CLI & Agent Skill (`api-guardian`) that stores API keys and secrets in macOS Keychain, Windows Credential Manager, or Linux Secret Service instead of `.env` files, shows masked previews, and injects credentials into child-process environment variables.
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB)](api-guardian/scripts/api_guard.py)
 
